@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cedilha</string>
+    <string name="descricao">Substitui ć por ç e Ć por Ç enquanto você digita no teclado físico.</string>
+</resources>
