@@ -29,8 +29,10 @@ consegue mudar isso.
    2. **Layout do teclado físico** → escolha **Inglês (EUA), Internacional**.
       No Android 14+ ele já costuma vir selecionado.
    3. **Ligar a troca automática** (opcional) → Acessibilidade → *Cedilha – troca automática*.
-      No Android 13+, se a opção estiver bloqueada ("configuração restrita"), vá em
-      *Configurações → Apps → Cedilha → ⋮ → Permitir configurações restritas* e tente de novo.
+      No Android 13+, se a opção estiver cinza ("controlado por configuração restrita"):
+      toque uma vez nela e confirme o aviso; depois use o botão **Troca automática bloqueada?**
+      do app (ou *Configurações → Apps → Cedilha*) → **⋮ → Permitir configurações restritas**
+      e ative a troca automática de novo.
 3. Com o teclado físico conectado, toque em **Escolher teclado agora** e selecione
    *Cedilha (teclado físico)*. Use o campo de teste para conferir.
 

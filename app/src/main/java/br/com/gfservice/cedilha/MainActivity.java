@@ -3,6 +3,8 @@ package br.com.gfservice.cedilha;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.TypedValue;
@@ -45,6 +47,13 @@ public class MainActivity extends Activity {
         botao(raiz, R.string.passo_habilitar, new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS));
         botao(raiz, R.string.passo_layout, new Intent("android.settings.HARD_KEYBOARD_SETTINGS"));
         botao(raiz, R.string.passo_troca, new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // Android 13+: apps instalados por APK precisam liberar as "configurações restritas"
+            // nas informações do app (⋮ → Permitir configurações restritas).
+            botao(raiz, R.string.liberar_restritas, new Intent(
+                    Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                    Uri.fromParts("package", getPackageName(), null)));
+        }
 
         Button escolher = new Button(this);
         escolher.setText(R.string.escolher_agora);

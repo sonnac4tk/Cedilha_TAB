@@ -13,6 +13,7 @@
     <string name="passo_habilitar">1. Habilitar o teclado Cedilha</string>
     <string name="passo_layout">2. Layout do teclado físico (EUA Internacional)</string>
     <string name="passo_troca">3. Ligar a troca automática (Acessibilidade)</string>
+    <string name="liberar_restritas">Troca automática bloqueada? Abrir Informações do app (⋮ → Permitir configurações restritas)</string>
     <string name="escolher_agora">Escolher teclado agora</string>
     <string name="campo_teste">Teste aqui: \' + c = ç</string>
 </resources>
