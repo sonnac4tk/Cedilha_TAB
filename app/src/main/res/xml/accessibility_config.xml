@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Não lê a tela nem o texto: só é usado para trocar de teclado. -->
 <accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accessibilityEventTypes="typeViewTextChanged"
+    android:accessibilityEventTypes="typeAnnouncement"
     android:accessibilityFeedbackType="feedbackGeneric"
-    android:canRetrieveWindowContent="true"
-    android:notificationTimeout="30"
-    android:description="@string/descricao" />
+    android:canRetrieveWindowContent="false"
+    android:settingsActivity="br.com.gfservice.cedilha.MainActivity"
+    android:description="@string/descricao_troca" />

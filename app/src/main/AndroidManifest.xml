@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Necessário (Android 11+) para enxergar o Gboard e os outros teclados instalados. -->
+    <queries>
+        <intent>
+            <action android:name="android.view.InputMethod" />
+        </intent>
+    </queries>
+
     <application
         android:label="@string/app_name"
-        android:allowBackup="false">
+        android:allowBackup="false"
+        android:theme="@android:style/Theme.DeviceDefault">
 
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Teclado para teclado físico: ' + c = ç -->
         <service
-            android:name=".CedilhaService"
-            android:label="@string/app_name"
+            android:name=".TecladoFisicoIME"
+            android:label="@string/nome_teclado"
+            android:exported="true"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <!-- Opcional: troca automática entre o teclado Cedilha e o teclado virtual -->
+        <service
+            android:name=".TrocaTecladoService"
+            android:label="@string/nome_troca"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
